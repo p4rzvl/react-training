@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* ── Design tokens ──────────────────────────────────── */
+:root {
+  --bg:          #f9f9f8;
+  --surface:     #ffffff;
+  --border:      #e4e4e7;
+  --text:        #52525b;
+  --text-strong: #18181b;
+  --text-muted:  #a1a1aa;
+  --accent:      #2563eb;
+  --accent-hover:#1d4ed8;
+  --danger:      #dc2626;
+  --radius:      6px;
+  --shadow:      0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+}
+
+/* ── Reset ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography ─────────────────────────────────────── */
+h1 { font-size: 1.6rem; font-weight: 600; color: var(--text-strong); letter-spacing: -.3px; }
+h2 { font-size: 1.2rem; font-weight: 600; color: var(--text-strong); }
+p  { color: var(--text); }
+a  { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Layout ─────────────────────────────────────────── */
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navbar ─────────────────────────────────────────── */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0 1.5rem;
+  height: 52px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-brand {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-strong);
+  margin-right: auto;
+  text-decoration: none;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+.nav-link:hover { color: var(--text-strong); background: var(--bg); text-decoration: none; }
+.nav-link.active { color: var(--accent); background: #eff6ff; }
+
+.navbar-user {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-left: 0.5rem;
+}
+
+/* ── Buttons ─────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); text-decoration: none; color: #fff; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-strong);
+  border-color: var(--border);
+}
+.btn-outline:hover { background: var(--bg); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: transparent;
+}
+.btn-ghost:hover { background: var(--bg); color: var(--text-strong); }
+
+.btn-danger {
+  background: transparent;
+  color: var(--danger);
+  border-color: var(--border);
+}
+.btn-danger:hover { background: #fef2f2; border-color: var(--danger); }
+
+/* ── Page wrapper ────────────────────────────────────── */
+main { flex: 1; }
+
+.page {
+  max-width: 680px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.page-center {
+  max-width: 400px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Card ────────────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+/* ── Page header ─────────────────────────────────────── */
+.page-header { margin-bottom: 1.5rem; }
+.page-header p { margin-top: 0.35rem; font-size: 0.9rem; color: var(--text-muted); }
+
+/* ── Action row ──────────────────────────────────────── */
+.actions { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.25rem; }
+
+/* ── Divider ─────────────────────────────────────────── */
+.divider { border: none; border-top: 1px solid var(--border); margin: 1.25rem 0; }
+
+/* ── Badge ───────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+.badge-blue   { background: #eff6ff; color: var(--accent); }
+.badge-red    { background: #fef2f2; color: var(--danger); }
+.badge-green  { background: #f0fdf4; color: #16a34a; }
